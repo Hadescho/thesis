@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{8A42C7A5-FAF9-B820-CADE-FC6915331502}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_SUBSTANCE;ENABLE_GENERICS;UNITY_ANDROID_API;ENABLE_CLOTH;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;UNITY_4_1_5;UNITY_4_1;ENABLE_PROFILER;UNITY_EDITOR</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Application\Scripts\Achievements\AchievementSceneScript.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\Campaign.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\HorizontalDrag.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\MapBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\MapNodeBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\PauseBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\SpellPositioning.cs" />
+     <Compile Include="Assets\Application\Scripts\Campaign\SpellSelectionBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\BuyTowerBox.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\CheckTowerType.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Currency.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\DoTBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Enemy.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\EnemySpawn.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Energy.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Game.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Healthbar.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\HeartStack.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\HellfireArea.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Levels.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Path.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\CryoRocketBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\HellfireShellBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\Laser.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\LightingBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\LightningBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\PoisonShellBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\RocketBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Projectiles\ShellBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Requisition.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\RosetteBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\SpawnHearts.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\SpellSelection.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\AirDropBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\AirStrikeBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\AirStrikeBombBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\ArtilleryBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\EMPBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\EnergyDrain.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\OrbitalStrikeBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\Timeshift.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Spells\Warbanner.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Stats.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\TowerSpawn.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\AirDropTowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\AuraTowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\CannonBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\CryoRocketPlatformBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\DamageBoosterBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\FusionPlantBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\MachinegunBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\MissilePlatformBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\PlasmaBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\PoisonGasCannonBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\RailgunBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\RocketPlatformBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\ShockTowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\SpeedBoosterBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\TeslaTowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\Tower1Behaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\Tower2Behaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\Tower3Behaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\TowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\TowerType.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\TwinBarrelMachinegunBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameLogic\Towers\UtilityTowerBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameMenu\GameMenuBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\GameMenu\GameMenuGame.cs" />
+     <Compile Include="Assets\Application\Scripts\Main.cs" />
+     <Compile Include="Assets\Application\Scripts\Settings\SettingsBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Settings\SliderBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Store\ShopBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Store\Skills\SkillStoreBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Store\StoreBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Store\TechTree\TechTreeBehaviour.cs" />
+     <Compile Include="Assets\Application\Scripts\Store\TechTree\TechTreeNodeBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\CountingTextBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\FadeBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\MoveToBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\ShakeBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\SiriusBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\TimedExecBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Behaviours\TimedLifeBehaviour.cs" />
+     <Compile Include="Assets\Common\Scripts\Data\HexColor.cs" />
+     <Compile Include="Assets\Common\Scripts\Data\int2.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\DateTimeExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\ExSpriteExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\ExSpriteFontExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\GameObjectExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\ListExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\MathExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\PhysicsExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\RectExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\RigidbodyExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\StringExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Ext\VectorExt.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\NetDebug.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\Sirius.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusAudio.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusCamera.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusConfig.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusLog.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusPrefs.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusStore.cs" />
+     <Compile Include="Assets\Common\Scripts\Global\SiriusUI.cs" />
+     <Compile Include="Assets\Common\Scripts\Objects\FloatingText.cs" />
+     <Compile Include="Assets\Common\Scripts\Objects\GameObjectRecycler.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\Drag.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\Overlay.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\OverlayWithHole.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UI.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIButton.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIClip.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIColorButton.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIComponent.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIEffectButton.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIFlow.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIPagination.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UITab.cs" />
+     <Compile Include="Assets\Common\Scripts\UI\UIToggleButton.cs" />
+     <Compile Include="Assets\Common\Scripts\Utility\AutoDestroy.cs" />
+     <Compile Include="Assets\Common\Scripts\Utility\Benchmark.cs" />
+     <None Include="Assets\ex2D\Core\Shaders\SpriteBlendClipping.shader" />
+     <None Include="Assets\ex2D\Core\Shaders\SpriteBlendPixelPerfect.shader" />
+     <None Include="Assets\Common\Shaders\TransitionFade.shader" />
+     <None Include="Assets\ex2D\Core\Shaders\SpriteBlendNoZTest.shader" />
+     <None Include="Assets\ex2D\Core\Shaders\SpriteBlend.shader" />
+     <None Include="Assets\Common\Shaders\TransitionCircle.shader" />
+     <None Include="Assets\Common\Shaders\Overlay.shader" />
+     <None Include="Assets\Application\Fonts\Latin.fnt" />
+ <Reference Include="ex2D.Runtime">
+ <HintPath>Assets\ex2D\Core\ex2D.Runtime.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
