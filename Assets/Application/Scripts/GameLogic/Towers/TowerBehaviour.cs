@@ -631,6 +631,7 @@ public class TowerBehaviour : SiriusBehaviour
 	
 	protected virtual void Start () 
 	{
+		Debug.Log (gameObject.name);
 		type = config.towers[gameObject.name];
 		auraBonusDamage = 1;
 		auraBonusSpeed = 1;
@@ -650,21 +651,14 @@ public class TowerBehaviour : SiriusBehaviour
 	{
 		if(!RosetteBehaviour.blocked)
 		{
-			if(RosetteBehaviour.instance == null)
+			if(!RosetteBehaviour.instance == null)
 			{
-				rosette = Game.Prototypes.Rosette.Center.Clone();
-				rosette.AddComponent<RosetteBehaviour>().owner = gameObject;
-				Game.LastRosette.Setter(rosette);
-				
+				RosetteBehaviour.instance.DestroyRosette();	
 			}
-			else
-			{
-				RosetteBehaviour.instance.DestroyRosette();
-				rosette = Game.Prototypes.Rosette.Center.Clone();
-				rosette.AddComponent<RosetteBehaviour>().owner = gameObject;
-				Game.LastRosette.Setter(rosette);
-				
-			}
+			rosette = Game.Prototypes.Rosette.Center.Clone();
+			rosette.AddComponent<RosetteBehaviour>().owner = gameObject;
+			Game.LastRosette.Setter(rosette);
+
 		}
 	}
 	
@@ -736,9 +730,9 @@ public class TowerBehaviour : SiriusBehaviour
 	
 	public virtual void UpgradeTo(string towerName)
 	{
-		GameObject newTower = GameObjectExt.Find("/Prototypes/NewTowers/" + towerName).Clone();
 		if (Currency.Purchase(TowerBehaviour.config.towers[towerName].price))
 		{
+			GameObject newTower = GameObjectExt.Find("/Prototypes/NewTowers/" + towerName).Clone();
 			newTower.transform.position = gameObject.transform.position;
 			newTower.transform.rotation = gameObject.transform.rotation;
 			TowerSpawn.AddTower(newTower);
@@ -748,7 +742,6 @@ public class TowerBehaviour : SiriusBehaviour
 		}
 		else
 		{
-			Destroy(newTower);
 			FloatingText floatie = Game.Prototypes.FloatingTexts.CashSpent.Clone("Not enough cash.",gameObject.transform.position);
 			floatie.Speed = new Vector3(0,1.5f,0);
 		}
