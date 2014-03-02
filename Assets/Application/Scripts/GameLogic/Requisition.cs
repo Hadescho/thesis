@@ -33,7 +33,7 @@ public class Requisition {
 	
 	void OnApplicationQuit()
 	{
-		Recieve(1000);
+		//Recieve(1000);
 		SiriusPrefs.Save ();
 	}
 }

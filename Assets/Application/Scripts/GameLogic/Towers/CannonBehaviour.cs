@@ -79,6 +79,10 @@ public class CannonBehaviour : TowerBehaviour {
 		Quaternion rotation = gameObject.transform.localRotation;
 		Vector3 rotor = rotation.eulerAngles;
 		float targetAngle = (target.transform.position - transform.position).GetAngle() + 90;
+		if(gameObject.name == "Cannon")
+		{
+			targetAngle += 90;
+		}
 		float objectAngle = rotor.z;
 		float angleToTarget = Mathf.DeltaAngle(targetAngle, objectAngle);
 		
@@ -137,10 +141,10 @@ public class CannonBehaviour : TowerBehaviour {
 				}
 				cooldown = type.cooldownMax * auraBonusSpeed ;
 				
-				if (gameObject.GetComponent<exSpriteAnimation>() != null)
-				{
-					gameObject.GetComponent<exSpriteAnimation>().PlayDefault();
-				}	
+//				if (gameObject.GetComponent<exSpriteAnimation>() != null)
+//				{
+//					gameObject.GetComponent<exSpriteAnimation>().PlayDefault();
+//				}	
 			}
 			else
 			{

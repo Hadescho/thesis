@@ -94,6 +94,7 @@ public class GameMenuBehaviour : MonoBehaviour
 			{
 				//SiriusPrefs.DeleteAll();
 				Debug.Log ("ASDASDASDASDASDASDASDASDASDAS");
+				Requisition.Recieve(100);
 			}
 		}
 	}

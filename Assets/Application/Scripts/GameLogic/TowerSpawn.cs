@@ -1,13 +1,3 @@
-/***
- Tower indexes:
- 0 - Tower 1
- 1 - Tower 2
- 2 - Tower 3
- 3 - Aura Tower
- 4 - Cannon Tower
- 5 - Shock Tower
- 
-***/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +5,7 @@ using System.Collections.Generic;
 public class TowerSpawn : SiriusBehaviour
 {
 	public static TowerSpawn instance;
-	
+	public static float boxSize = 23.0f;
 	private static GameObject background;
 	public static GameObject cursor;
 	public static List<Vector3> posList;
@@ -115,13 +105,13 @@ public class TowerSpawn : SiriusBehaviour
 	
 	public static GameObject Grid(GameObject go, float z = -1.0f)
 	{
-		go.transform.position = new Vector3(((Mathf.Round(go.transform.position.x/32.0f)*32.0f)),((Mathf.Round(go.transform.position.y/32.0f)*32.0f)),-1.0f);
+		go.transform.position = new Vector3(((Mathf.Round(go.transform.position.x/boxSize)*boxSize)),((Mathf.Round(go.transform.position.y/boxSize)*boxSize)),-1.0f);
 		return go;
 	}
 	
 	public static Vector3 Grid(Vector3 vec,float z = -1.0f)
 	{
-		vec = new Vector3(((Mathf.Round(vec.x/32.0f)*32.0f)),((Mathf.Round(vec.y/32.0f)*32.0f)),z);
+		vec = new Vector3(((Mathf.Round(vec.x/boxSize)*boxSize)),((Mathf.Round(vec.y/boxSize)*boxSize)),z);
 		return vec;
 	}
 	
@@ -137,15 +127,16 @@ public class TowerSpawn : SiriusBehaviour
 		}
 		else
 		{
-			if(hit.transform.gameObject.name == Game.background.name 
-				&& Currency.Purchase(towers[BuyTowerBox.checkTower].GetComponent<TowerBehaviour>().type.price))
+			Debug.Log(BuyTowerBox.checkTower);
+			Debug.Log(towers[BuyTowerBox.checkTower].GetComponent<TowerBehaviour>().type.price);
+			if(hit.transform.gameObject.name == Game.background.name && Currency.Purchase(towers[BuyTowerBox.checkTower].GetComponent<TowerBehaviour>().type.price) )
 			{
 				Spawn(hit.point , towers[BuyTowerBox.checkTower]);
 			}
 		}
 	}
 	
-	
+
 	public static void Spawn(Vector3 pos , GameObject tower)
 	{
 		
@@ -302,6 +293,7 @@ public class TowerSpawn : SiriusBehaviour
 				break;
 			case 4:
 				alphaTower = Game.Prototypes.Towers.CannonTower.Clone();
+				Destroy(alphaTower.GetComponent<CannonBehaviour>());
 				break;
 			default:
 				alphaTower = null;

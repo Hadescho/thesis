@@ -436,7 +436,7 @@ public class Game : MonoBehaviour {
 		Prototypes.Towers.Tower5 = GameObject.Find("/Prototypes/Towers/Tower 5");
 		Prototypes.Towers.Tower6 = GameObject.Find("/Prototypes/Towers/Tower 6");
 		Prototypes.Towers.AuraTower = GameObject.Find ("/Prototypes/Towers/AuraTower ");
-		Prototypes.Towers.CannonTower = GameObject.Find("/Prototypes/Towers/Cannon Tower ");
+		Prototypes.Towers.CannonTower = GameObject.Find("/Prototypes/Towers/Cannon");
 		Prototypes.Towers.ShockTower = GameObject.Find("/Prototypes/Towers/Tower 3").Clone ();
 		Prototypes.Towers.ShockTower.GetComponent<exSprite>().color= new Color(0.686f,0.172f,0.364f,1.0f);
 		Prototypes.Towers.AirDropTower = GameObject.Find ("/Prototypes/Extras/AirDrop/MachineGun");

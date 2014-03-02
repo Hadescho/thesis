@@ -54,7 +54,29 @@ public class PoisonGasCannonBehaviour : Tower1Behaviour {
 		
 		return null;
 	}
-	
+
+	void Rotate()
+	{
+		Quaternion rotation = gameObject.transform.localRotation;
+		Vector3 rotor = rotation.eulerAngles;
+		float targetAngle = (target.transform.position - transform.position).GetAngle () + 90;
+		float objectAngle = rotor.z;
+		float angleToTarget = Mathf.DeltaAngle (targetAngle, objectAngle);
+		if (Mathf.Abs (angleToTarget) > 2f) {
+			//rotating = true;
+			if (angleToTarget < 0) {
+				rotor.z -= 150.0f * Time.deltaTime * timeshift;
+			}
+			else {
+				rotor.z += 150.0f * Time.deltaTime * timeshift;
+			}
+			rotation.eulerAngles = rotor;
+			gameObject.transform.rotation = rotation;
+		}
+		else {
+			rotating = false;
+		}
+	}	
 
 	void Update () {
 		
@@ -66,31 +88,8 @@ public class PoisonGasCannonBehaviour : Tower1Behaviour {
 		
 		if (target != null)
 		{
-				Quaternion rotation = gameObject.transform.localRotation;
-				Vector3 rotor = rotation.eulerAngles;
-				float targetAngle = (target.transform.position - transform.position).GetAngle() + 90;
-				float objectAngle = rotor.z;
-				float angleToTarget = Mathf.DeltaAngle(targetAngle, objectAngle);
+				Rotate ();
 				
-				if (Mathf.Abs(angleToTarget) > 2f)
-				{
-					//rotating = true;
-				
-					if (angleToTarget < 0 )
-					{
-						rotor.z -= 150.0f * Time.deltaTime * timeshift;
-					}
-					else
-					{
-						rotor.z += 150.0f * Time.deltaTime * timeshift;
-					}
-					rotation.eulerAngles = rotor;
-					gameObject.transform.rotation = rotation;
-				}
-				else
-				{
-					rotating = false;
-				}
 				
 		}
 		
