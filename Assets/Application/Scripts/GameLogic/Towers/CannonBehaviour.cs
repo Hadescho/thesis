@@ -106,7 +106,30 @@ public class CannonBehaviour : TowerBehaviour {
 			rotating = false;
 		}
 	}
-	
+
+	void Shoot ()
+	{
+		currDamage = type.projectileDamage * auraBonusDamage;
+		Vector3 temp = gameObject.transform.position - target.transform.position;
+		if (temp.magnitude < type.range && !rotating) {
+			projectile.SetActive (true);
+			foreach (GameObject muzzle in muzzleList) {
+				GameObject rocket = projectile.Clone ();
+				rocket.transform.position = muzzle.transform.position;
+				rocket.GetComponent<ShellBehaviour> ().target = target;
+				rocket.GetComponent<ShellBehaviour> ().origin = gameObject;
+				rocket.GetComponent<ShellBehaviour> ().currDamage = currDamage;
+			}
+			cooldown = type.cooldownMax * auraBonusSpeed;
+			//				if (gameObject.GetComponent<exSpriteAnimation>() != null)
+			//				{
+			//					gameObject.GetComponent<exSpriteAnimation>().PlayDefault();
+			//				}	
+		}
+		else {
+			target = null;
+		}
+	}	
 
 	void Update () {
 		
@@ -124,37 +147,13 @@ public class CannonBehaviour : TowerBehaviour {
 		
 		
 		if (cooldown <= 0 && target != null && !target.GetComponent<Enemy>().isDead){
-		
-			currDamage = type.projectileDamage * auraBonusDamage;
-			Vector3 temp = gameObject.transform.position  - target.transform.position;
-			
-			if (temp.magnitude < type.range && !rotating){
-			
-				projectile.SetActive(true);
-				foreach(GameObject muzzle in muzzleList)
-				{
-					GameObject rocket = projectile.Clone();
-					rocket.transform.position = muzzle.transform.position;
-					rocket.GetComponent<ShellBehaviour>().target = target;
-					rocket.GetComponent<ShellBehaviour>().origin = gameObject;
-					rocket.GetComponent<ShellBehaviour>().currDamage = currDamage;
-				}
-				cooldown = type.cooldownMax * auraBonusSpeed ;
-				
-//				if (gameObject.GetComponent<exSpriteAnimation>() != null)
-//				{
-//					gameObject.GetComponent<exSpriteAnimation>().PlayDefault();
-//				}	
-			}
-			else
-			{
-				target = null;
-			}		
+			Shoot ();
 		}
 		else
 		{
 			cooldown -= Time.deltaTime * timeshift;
 		}
+
 		if (target != null && target.GetComponent<Enemy>().isDead)
 		{
 			target = null;
