@@ -39,7 +39,32 @@ public class Tower2Behaviour : TowerBehaviour {
 			{
 				Vector3 temp = gameObject.transform.position  - Enemy.all[i].transform.position;
 					
-				
+			{
+				0,  "Bzzt, bzzt. Captain, I am your informational officer.\n" +
+				"You were teleported here in order to command\n" +
+				"the defense of RZ1302 weapon facility\n" +
+				"Use the command interface to build towers as fast as possible!"
+			},
+			{
+				1,  "I am sorry for the unexpected teleportations\n" +
+				",but there are rebelios facilility androids\n" +
+				"in every (Bzzt, bzzt) in the galaxy\n" +
+				"I hope I will , bZZZT <- Connection lost ->"
+			},
+			{
+				2,  "Found ya! (Bzzt), sorry for that. \n" +
+				"This time there will be flying enemies\n" +
+				"Use Anti-Air turrent (Upgrade the Machinegun tower)"
+			},
+			{
+				3,  "It is hard to maintain the (Bzzt, bZzt).\n" +
+				"I will be able to teleport you around, but\n" +
+				"I will not (Bzzt) to give you intel."
+			},
+			{
+				4, "Ohh my god, (Bzzt, bZzt).\n" +
+				"Captain, just run. RUN!"
+			}
 				if (temp.magnitude < type.range && AirUnitAtack(Enemy.all[i],type))
 				{
 					target = Enemy.all[i];
