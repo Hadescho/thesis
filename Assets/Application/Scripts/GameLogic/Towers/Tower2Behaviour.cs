@@ -32,6 +32,20 @@ public class Tower2Behaviour : TowerBehaviour {
 	
 
 	void Update () {
+		if(Input.GetMouseButtonUp(0))
+		{
+			if (lineCount < storyText.Count)
+			{
+				storyTextBox.GetComponent<exSpriteFont>().text = storyText[lineCount];
+				lineCount += 1;
+			}
+			else
+			{
+				SiriusBehaviour.ResumeAll();
+				TowerSpawn.popUpBlockSpawn = false;
+				Destroy(gameObject);
+			}
+		}
 		
 		if (target == null)
 		{
