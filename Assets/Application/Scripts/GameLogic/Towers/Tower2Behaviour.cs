@@ -19,6 +19,28 @@ public class Tower2Behaviour : TowerBehaviour {
 	public float rosetteTime;
 	public bool rosetteActive;
 	
+	protected void CompletionCheck()
+	{
+		if (currentVal >= maxVal)
+		{
+			Complete();
+		}
+		else
+		{
+			NotCompleated();
+		}
+	}
+	public void Complete()
+	{
+		achObj.GetComponent<exSprite>().color = new Color(0.2f,0.8f,0.2f,1.0f);
+		
+	}
+	
+	public void NotCompleated()
+	{
+		achObj.GetComponent<exSprite>().color = new Color(0.2f,0.2f,0.2f,0.7f);
+	}
+	
 	protected void Start(){
 	Init ();
 	currentVal = AchievementBehaviour.achievements[title.GetComponent<exSpriteFont>().text].currentVal;
