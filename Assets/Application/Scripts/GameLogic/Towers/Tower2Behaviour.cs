@@ -29,9 +29,20 @@ public class Tower2Behaviour : TowerBehaviour {
 		currDamage = Game.Towers.Damage.Tower2;
 		auraBonusSpeed = 1;
 	}
-	
+	void Start () 
+	{
+		if(!textDict.ContainsKey(MapNodeBehaviour.loadedLevel))
+		{
+			Destroy(gameObject);
+			return;
+		}
+		SiriusBehaviour.PauseAll();
+		//...
+	}
 
 	void Update () {
+		
+		
 		if(Input.GetMouseButtonUp(0))
 		{
 			if (lineCount < storyText.Count)
