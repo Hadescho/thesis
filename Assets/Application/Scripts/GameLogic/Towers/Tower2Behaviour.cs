@@ -12,7 +12,7 @@ public class Tower2Behaviour : TowerBehaviour {
 //	
 //	public static new Config config = new Config();
 	
-	
+	private Dictionary<int,string> textDict;
 	public GameObject target;
 	public GameObject muzzle;
 	public bool rotating;
