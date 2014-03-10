@@ -19,6 +19,18 @@ public class Tower2Behaviour : TowerBehaviour {
 	public float rosetteTime;
 	public bool rosetteActive;
 	
+	protected void Start(){
+	Init ();
+	currentVal = AchievementBehaviour.achievements[title.GetComponent<exSpriteFont>().text].currentVal;
+	maxVal = AchievementBehaviour.achievements[title.GetComponent<exSpriteFont>().text].maxVal;
+	int progressVal = currentVal;
+	if (progressVal > maxVal ){
+		progressVal = maxVal;
+	}
+	progress.GetComponent<exSpriteFont>().text = progressVal.ToString() + "/" + maxVal.ToString();
+	CompletionCheck();
+}
+	
 	new void Start () 
 	{
 		base.Start();
